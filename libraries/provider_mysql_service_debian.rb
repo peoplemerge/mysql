@@ -33,24 +33,24 @@ class Chef
               recursive true
             end
 
-            template '/var/cache/local/preseeding/mysql-server.seed' do
+            template '/var/cache/local/preseeding/mysql.seed' do
               cookbook 'mysql'
               source 'debian/mysql-server.seed.erb'
               owner 'root'
               group 'root'
               mode '0600'
               action :create
-              notifies :run, 'execute[preseed mysql-server]', :immediately
+              notifies :run, 'execute[preseed mysql]', :immediately
             end
 
-            execute 'preseed mysql-server' do
-              command '/usr/bin/debconf-set-selections /var/cache/local/preseeding/mysql-server.seed'
+            execute 'preseed mysql' do
+              command '/usr/bin/debconf-set-selections /var/cache/local/preseeding/mysql.seed'
               action :nothing
             end
 
             # package automatically initializes database and starts service.
             # ... because that's totally super convenient.
-            package 'mysql-server' do
+            package 'mysql' do
               action :install
             end
 
