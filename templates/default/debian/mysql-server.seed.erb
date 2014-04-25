@@ -1,10 +1,10 @@
-mysql-server-5.5        mysql-server/root_password_again        select <%= node['mysql']['server_root_password'] %>
-mysql-server-5.5        mysql-server/root_password      select <%= node['mysql']['server_root_password'] %>
-mysql-server-5.5        mysql-server-5.5/really_downgrade       boolean false
-mysql-server-5.5        mysql-server-5.5/need_sarge_compat      boolean false
-mysql-server-5.5        mysql-server-5.5/start_on_boot  boolean false
-mysql-server-5.5        mysql-server/error_setting_password     boolean false
-mysql-server-5.5        mysql-server-5.5/nis_warning    note
-mysql-server-5.5        mysql-server-5.5/postrm_remove_databases        boolean false
-mysql-server-5.5        mysql-server/password_mismatch  boolean false
-mysql-server-5.5        mysql-server-5.5/need_sarge_compat_done boolean true
+mysql        mysql/root_password_again        select <%= node['mysql']['server_root_password'] %>
+mysql        mysql/root_password      select <%= node['mysql']['server_root_password'] %>
+mysql        mysql/really_downgrade       boolean false
+mysql        mysql/need_sarge_compat      boolean false
+mysql        mysql/start_on_boot  boolean false
+mysql        mysql/error_setting_password     boolean false
+mysql        mysql/nis_warning    note
+mysql        mysql/postrm_remove_databases        boolean false
+mysql        mysql/password_mismatch  boolean false
+mysql        mysql/need_sarge_compat_done boolean true
